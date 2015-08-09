@@ -1,0 +1,43 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+ <div class="container" >
+      <div class="col-md-6 col-md-offset-2">
+        <form ng-submit ="vm.submitPost()" >
+                <div class="form-group">
+                      <label for="nameInput">Name</label>
+                      <input type="text" ng-model = "vm.data.name" id="nameInput" name="fullname" class="form-control">
+                </div>
+                <div class="form-group">
+                      <label for="nameInput">Email</label>
+                      <input type="email" ng-model = "vm.data.email" id="emailInput" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                      <label for="contactInput">Contact No.</label>
+                      <input type="text" ng-model = "vm.data.contact" id="contactInput" name="contact" class="form-control">
+                </div>
+                <div class="form-group">
+                      <label for="addressInput">Address</label>
+                      <input type="text" ng-model = "vm.data.address" id="Address" name="address" class="form-control">
+                </div>
+                <div class="form-group">
+                      <label for="nameGender">Gender</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model = "vm.data.gender" name="gender" id="gender" value="male" aria-label="Male">
+                            Male
+                        </label>
+                         <label>
+                            <input type="radio" ng-model = "vm.data.gender" name="gender" id="gender" value="female" aria-label="Female">
+                            Female
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form><br/>
+
+
+      </div>
+ </div>
+
+</div>
