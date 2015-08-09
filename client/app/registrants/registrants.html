@@ -11,7 +11,8 @@
                 <tr>
                     <th>#</th>
                     <th>Profile Pic</th>
-                    <th>Name</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
                     <th>Email</th>
                     <th>Address</th>
                     <th>Mobile Number</th>
@@ -19,14 +20,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                <tr ng-repeat ="item in vm.registrantsList">
+                    <td scope="row">{{item.registrant_id}}</td>
+                    <td></td>
+                    <td>{{item.fname}}</td>
+                    <td>{{item.lname}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.mobile}}</td>
+                    <td>
+                        <a ng-click="vm.editUser(list.user_id)" class="btn btn-small btn-primary">edit</a>
+                        <a ng-click="vm.deleteUser(list.user_id)" class="btn btn-small btn-danger">delete</a>
+                    </td>
                 </tr>
 
             </tbody>

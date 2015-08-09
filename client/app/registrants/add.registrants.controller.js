@@ -11,22 +11,20 @@
             vm = this;
             registrantService = RegistrantService;
             location = $location;
-            vm.loadData();
         }
-        controller.prototype.loadData = function() {
-            registrantService.getAllRegistrants()
-                .success(function(data, status, headers, config) {
-                    vm.lists = data;
-                })
-                .error(function(data, status, headers, config) {
-                    console.log('error');
-                });
-        }
+
+
         controller.prototype.addRegistrant = function() {
             location.path('/add-registrant');
         }
         controller.prototype.submitForm = function() {
-            console.log(vm.user);
+            registrantService.addRegistrant(vm.registrant)
+                      .success(function(data, status, headers, config){
+                          location.path('/registrants');
+                      })
+                      .error(function(data, status, headers, config){
+                        console.log('error');
+                      });
         }
         return controller;
     })();

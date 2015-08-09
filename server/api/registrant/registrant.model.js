@@ -5,9 +5,12 @@ var mongoose = require('mongoose'),
   autoIncrement.initialize(mongoose);
 
 var prop = {
-    name: String,
-    info: String,
-    active: Boolean
+    fname: String,
+    lname: String,
+    email: String,
+    address: String,
+    mobile: String,
+
 };
 
 var key  = 'Registrant'.concat('_id').toLowerCase();

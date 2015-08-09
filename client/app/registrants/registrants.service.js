@@ -15,7 +15,7 @@
     };
 
     RegistrantService.prototype.addRegistrant = function(registrant){
-        return http.post('/api/registrants',Registrant);
+        return http.post('/api/registrants',registrant);
 
     };
 

@@ -16,7 +16,7 @@
         controller.prototype.loadData = function() {
             registrantService.getAllRegistrants()
                 .success(function(data, status, headers, config) {
-                    vm.lists = data;
+                    vm.registrantsList = data;
                 })
                 .error(function(data, status, headers, config) {
                     console.log('error');
