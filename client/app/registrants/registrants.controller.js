@@ -25,6 +25,16 @@
         controller.prototype.addRegistrant = function(){
         	 location.path('/add-registrant');
         }
+        controller.prototype.deleteRegistrant = function(id){
+
+             registrantService.removeRegistrant(id)
+                .success(function(data, status, headers, config) {
+                    vm.loadData();
+                })
+                .error(function(data, status, headers, config) {
+                    console.log('error');
+                });
+        }
         return controller;
     })();
 

@@ -13,7 +13,7 @@ exports.index = function(req, res) {
 
 // Get a single registrant
 exports.show = function(req, res) {
-  Registrant.findOne({user_id:req.params.id}, function (err, registrant) {
+  Registrant.findOne({registrant_id:req.params.id}, function (err, registrant) {
     if(err) { return handleError(res, err); }
     if(!registrant) { return res.status(404).send('Not Found'); }
     return res.json(registrant);
@@ -44,7 +44,7 @@ exports.update = function(req, res) {
 
 // Deletes a registrant from the DB.
 exports.destroy = function(req, res) {
-  Registrant.findOne({user_id:req.params.id}, function (err, registrant) {
+  Registrant.findOne({registrant_id:req.params.id}, function (err, registrant) {
     if(err) { return handleError(res, err); }
     if(!registrant) { return res.status(404).send('Not Found'); }
     registrant.remove(function(err) {
