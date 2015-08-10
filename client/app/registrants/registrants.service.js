@@ -27,6 +27,10 @@
          return http.delete('/api/registrants/'+id);
     };
 
+    RegistrantService.prototype.uploadProfilePic = function(data){
+         return http.post('/api/uploads/'+data);
+    };
+
     RegistrantService.prototype.updateRegistrant = function(registrant, registrants){
 
     };

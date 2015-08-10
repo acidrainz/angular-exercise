@@ -1,5 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div flow-prevent-drop flow-name="vm.obj.flow" flow-init id="signupform" class="container">
+<div flow-prevent-drop flow-name="vm.obj.flow" flow-init="{target: '/upload'}" id="signupform" class="container">
     <form class="form-horizontal" role="form" name="regForm" ng-submit="vm.submitForm()">
         <div class="col-md-6 col-md-offset-2">
             <div class="panel panel-info">

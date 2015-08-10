@@ -13,7 +13,18 @@
       <ul class="nav navbar-nav">
 
         <li ng-repeat="item in vm.menu" ng-class="{active:vm.isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
+            <a ng-hide="item.subnavs" ng-href="{{item.link}}">{{item.title}}</a>
+
+              <span  ng-if="!!item.subnavs.length" dropdown on-toggle="toggled(open)">
+                        <a id="simple-dropdown" dropdown-toggle>
+                          {{item.title}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                          <li ng-repeat="item in item.subnavs">
+                            <a ng-href="{{item.link}}">{{item.title}}</a>
+                          </li>
+                        </ul>
+                </span>
 
         </li>
 
