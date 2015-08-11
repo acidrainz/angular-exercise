@@ -1,5 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div flow-prevent-drop flow-name="vm.obj.flow" flow-init="{target: '/upload'}" id="signupform" class="container">
+<div flow-prevent-drop   flow-init="{target: '/upload', chunkSize: 1024*1024, testChunks: false}" id="signupform" class="container">
     <form class="form-horizontal" role="form" name="regForm" ng-submit="vm.submitForm()">
         <div class="col-md-6 col-md-offset-2">
             <div class="panel panel-info">
@@ -7,7 +7,7 @@
                     <div class="panel-title">Register</div>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group" >
+                    <div class="form-group">
                         <label for="fname" class="col-md-3 control-label">First Name</label>
                         <div class="col-md-9">
                             <input type="text" required class="form-control" ng-model='vm.registrant.fname' name="fname" placeholder="Enter your first name">
@@ -34,18 +34,11 @@
                     <div class="form-group">
                         <label for="icode" class="col-md-3 control-label">Mobile Number</label>
                         <div class="col-md-9">
-                            <input type="text"  ng-pattern="/^[0-9]+$/"
-                                                required class="form-control"
-                                                ng-model='vm.registrant.mobile'
-                                                name="mobile"
-                                                validation-msg-pattern="Invalid mobile format"
-                                                placeholder="Enter valid mobile number">
+                            <input type="text" ng-pattern="/^[0-9]+$/" required class="form-control" ng-model='vm.registrant.mobile' name="mobile" validation-msg-pattern="Invalid mobile format" placeholder="Enter valid mobile number">
                         </div>
                     </div>
-
-                        <!-- Button -->
-
-                            <button type="submit" ng-disabled="regForm.$pristine || regForm.$invalid" class="pull-right btn btn-info">Submit</button>
+                    <!-- Button -->
+                    <button type="submit" ng-click="$flow.upload();" ng-disabled="regForm.$pristine || regForm.$invalid" class="pull-right btn btn-info">Submit</button>
                 </div>
             </div>
         </div>
@@ -64,7 +57,6 @@
                     <input class="btn" required type="file" flow-btn/>
                     <span class="btn" flow-btn></span>
                 </div>
-
             </div>
         </div>
     </form>

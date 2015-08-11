@@ -18,15 +18,14 @@
             location.path('/add-registrant');
         }
         controller.prototype.submitForm = function() {
-          vm.obj.flow.upload();
-          console.log(vm.obj.flow.upload())
-            registrantService.addRegistrant(vm.registrant)
-                      .success(function(data, status, headers, config){
-                          location.path('/registrants');
-                      })
-                      .error(function(data, status, headers, config){
-                        console.log('error');
-                      });
+
+            // registrantService.addRegistrant(vm.registrant)
+            // .success(function(data, status, headers, config){
+            //     location.path('/registrants');
+            // })
+            // .error(function(data, status, headers, config){
+            //   console.log('error');
+            // });
 
         }
         return controller;
